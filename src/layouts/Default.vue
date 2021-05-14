@@ -17,7 +17,7 @@
       <h1 class="project-name">{{general.title}}</h1>
       <h2 class="project-tagline">{{general.subtitle}}</h2>
       <a href="https://github.com/bingzhan" target="_blank" class="btn">GitHub主页</a>
-      <a href="https://github.com/GitHub-Laziji/vblog" target="_blank" class="btn">源码</a>
+      <a href="https://github.com/bingzhan/gird-blog" target="_blank" class="btn">源码</a>
     </section>
 
     <div style="position: relative; z-index: 2; margin: -30px auto auto; width: 64rem;">
