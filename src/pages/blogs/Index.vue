@@ -105,7 +105,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      token: window.sessionStorage.getItem('jwt'),
+      token: process.isClient ? sessionStorage.getItem('jwt') : false,
       loginForm: {
         name: '',
         password: ''
@@ -153,7 +153,9 @@ export default {
           identifier: this.loginForm.name,
           password: this.loginForm.password,
         }).then(response => {
-          window.sessionStorage.setItem('jwt', response.data.jwt);
+          if (process.isClient) {
+            sessionStorage.setItem('jwt', response.data.jwt);
+          }
           this.token = response.data.jwt;
           this.$refs.loginForm.resetFields();
           this.$message({

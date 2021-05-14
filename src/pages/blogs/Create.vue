@@ -25,7 +25,7 @@ export default {
         title: '',
         content: ''
       },
-      token: window.sessionStorage.getItem('jwt')
+      token: process.isClient ? sessionStorage.getItem('jwt') : false
     }
   },
   methods: {
