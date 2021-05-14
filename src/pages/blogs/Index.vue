@@ -105,7 +105,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      token: sessionStorage.getItem('jwt'),
+      token: window.sessionStorage.getItem('jwt'),
       loginForm: {
         name: '',
         password: ''
@@ -153,7 +153,7 @@ export default {
           identifier: this.loginForm.name,
           password: this.loginForm.password,
         }).then(response => {
-          sessionStorage.setItem('jwt', response.data.jwt);
+          window.sessionStorage.setItem('jwt', response.data.jwt);
           this.token = response.data.jwt;
           this.$refs.loginForm.resetFields();
           this.$message({
